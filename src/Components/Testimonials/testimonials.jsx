@@ -36,91 +36,97 @@ const testimonials = [
 function Testimonials() {
   return (
     <section className="testimonials" id="testimonials">
+      <div className="testimonials-container">
 
-      <div className="testimonials-header">
+        {/* HEADER */}
+        <div className="testimonials-header">
 
-        <p className="testimonials-tag">
-          AVIS CLIENTS
-        </p>
+          <div className="testimonials-heading">
+            <p className="testimonials-eyebrow">
+              AVIS CLIENTS
+            </p>
 
-        <h2>
-          La confiance de nos
-          <span> clients.</span>
-        </h2>
+            <h2>
+              La confiance de nos{" "}
+              <span>clients.</span>
+            </h2>
 
-        <p className="testimonials-description">
-          Découvrez ce que nos clients pensent de leur expérience
-          chez W&Y Service Auto.
-        </p>
+            <p className="testimonials-description">
+              Découvrez ce que nos clients pensent de leur
+              expérience chez W&Y Service Auto.
+            </p>
+          </div>
 
-        <div className="rating-summary">
+          {/* RATING */}
+          <div className="rating-summary">
+            <div className="rating-score">
+              4.9
+            </div>
 
-          <strong>4.9</strong>
+            <div className="rating-info">
+              <div className="rating-stars" aria-label="4.9 sur 5">
+                ★★★★★
+              </div>
 
-          <div>
-            <div className="stars">★★★★★</div>
-            <p>61 avis Google</p>
+              <p>61 avis Google</p>
+            </div>
           </div>
 
         </div>
 
-      </div>
 
+        {/* TESTIMONIALS */}
+        <div className="testimonials-grid">
 
-      <div className="testimonials-grid">
+          {testimonials.map((testimonial, index) => (
+            <article
+              className="testimonial-card"
+              key={`${testimonial.name}-${index}`}
+            >
 
-        {testimonials.map((testimonial, index) => (
+              <div className="testimonial-card-top">
+                <span className="quote-mark">“</span>
 
-          <article
-            className="testimonial-card"
-            key={index}
-          >
-
-            <div className="testimonial-top">
-
-              <div className="avatar">
-                {testimonial.name.charAt(0)}
-              </div>
-
-              <div>
-
-                <h3>{testimonial.name}</h3>
-
-                <div className="card-stars">
+                <div className="card-stars" aria-label="5 étoiles">
                   {"★".repeat(testimonial.rating)}
                 </div>
-
               </div>
 
-            </div>
+              <p className="testimonial-text">
+                {testimonial.text}
+              </p>
+
+              <div className="testimonial-author">
+                <span className="author-line"></span>
+
+                <div>
+                  <h3>{testimonial.name}</h3>
+                  <p>Client</p>
+                </div>
+              </div>
+
+              <span className="google-review">
+                Google Review
+              </span>
+
+            </article>
+          ))}
+
+        </div>
 
 
-            <p className="testimonial-text">
-              "{testimonial.text}"
-            </p>
-
-
-            <span className="google-review">
-              Google Review
-            </span>
-
-          </article>
-
-        ))}
+        {/* CTA */}
+        <div className="testimonials-action">
+          <a
+            href="#appointment"
+            className="testimonials-button"
+          >
+            Prendre rendez-vous
+            <span>→</span>
+          </a>
+        </div>
 
       </div>
-
-
-      <div className="testimonials-action">
-
-        <a
-  href="#appointment"
-  className="testimonials-button">
-  Prendre rendez-vous
-      </a>
-
-      </div>
-
     </section>
   );
 }

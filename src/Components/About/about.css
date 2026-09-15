@@ -1,143 +1,597 @@
+/* =========================
+   ABOUT
+========================= */
+
 .about {
+    width: 100%;
     background: #111111;
-    padding: 100px 30px;
+    padding: 120px 30px;
+    box-sizing: border-box;
 }
 
 .about-container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: 75px;
 
     align-items: center;
 }
 
-/* IMAGE */
 
-.about-image {
+/* =========================
+   MEDIA / PHOTOS
+========================= */
+
+.about-media {
     width: 100%;
-    height: 560px;
+    min-width: 0;
 }
 
-.about-image-placeholder {
+
+/* =========================
+   MAIN IMAGE
+========================= */
+
+.about-main-image {
+    position: relative;
+    width: 100%;
+    height: 500px;
+
+    overflow: hidden;
+    background: #181818;
+}
+
+.about-main-image img {
+    display: block;
+
     width: 100%;
     height: 100%;
 
-    background: #222222;
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.7s ease;
+}
+
+.about-main-image:hover img {
+    transform: scale(1.025);
+}
+
+
+/* =========================
+   MAIN IMAGE OVERLAY
+========================= */
+
+.about-main-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(to top,
+            rgba(0, 0, 0, 0.68),
+            rgba(0, 0, 0, 0) 42%);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   IMAGE CAPTION
+========================= */
+
+.about-image-caption {
+    position: absolute;
+
+    left: 28px;
+    bottom: 25px;
+
+    z-index: 2;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 12px;
+}
 
-    color: #555555;
+.about-image-caption span {
+    width: 28px;
+    height: 1px;
 
-    font-size: 22px;
-    font-weight: 800;
+    background: #ffffff;
+}
+
+.about-image-caption p {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 700;
     letter-spacing: 2px;
 }
 
-/* CONTENT */
+
+/* =========================
+   ADDITIONAL GALLERY
+========================= */
+
+.about-gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 12px;
+}
+
+.about-gallery-item {
+    position: relative;
+
+    width: 100%;
+    height: 125px;
+
+    overflow: hidden;
+
+    background: #181818;
+}
+
+.about-gallery-item img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform 0.5s ease,
+        opacity 0.3s ease;
+}
+
+.about-gallery-item:hover img {
+    transform: scale(1.05);
+    opacity: 0.92;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
 
 .about-content {
-    max-width: 550px;
+    width: 100%;
+    max-width: 530px;
 }
 
-.about .section-tag {
-    color: #c8191f;
-    font-size: 14px;
+.about-eyebrow {
+    margin: 0 0 18px;
+
+    color: #d71920;
+
+    font-size: 12px;
     font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+    letter-spacing: 3px;
 }
 
 .about-content h2 {
+    margin: 0;
+
     color: #ffffff;
 
-    font-size: clamp(36px, 5vw, 56px);
-    line-height: 1.1;
+    font-size: clamp(42px, 4.3vw, 58px);
+    line-height: 1.06;
 
-    margin: 0 0 25px;
+    font-weight: 750;
+    letter-spacing: -2px;
 }
 
 .about-content h2 span {
-    color: #c8191f;
+    color: #d71920;
 }
+
+
+/* =========================
+   TEXT
+========================= */
 
 .about-text {
-    color: #bbbbbb;
+    margin-top: 32px;
+
+    max-width: 510px;
+}
+
+.about-text p {
+    margin: 0 0 18px;
+
+    color: #a7a7a7;
+
     font-size: 16px;
     line-height: 1.7;
-
-    margin-bottom: 18px;
 }
 
-/* FEATURES */
-
-.about-features {
-    margin-top: 30px;
+.about-text p:last-child {
+    margin-bottom: 0;
 }
 
-.about-feature {
+
+/* =========================
+   LIST
+========================= */
+
+.about-list {
+    margin-top: 38px;
+
+    border-top: 1px solid #292929;
+}
+
+.about-item {
+    min-width: 0;
+    min-height: 72px;
+
     display: flex;
     align-items: center;
-    gap: 14px;
 
-    margin-bottom: 15px;
+    gap: 20px;
+
+    border-bottom: 1px solid #292929;
 }
 
-.about-feature span {
-    width: 28px;
-    height: 28px;
+.about-number {
+    flex-shrink: 0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #d71920;
 
-    background: #c8191f;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.about-item-content {
+    min-width: 0;
+}
+
+.about-item-content h3 {
+    margin: 0 0 4px;
+
     color: #ffffff;
 
-    border-radius: 50%;
-
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 700;
 }
 
-.about-feature p {
-    color: #eeeeee;
+.about-item-content p {
     margin: 0;
+
+    color: #777777;
+
+    font-size: 13px;
+    line-height: 1.4;
 }
 
-/* RESPONSIVE */
 
-@media (max-width: 800px) {
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
     .about {
-        padding: 70px 20px;
+        padding: 90px 25px;
     }
 
     .about-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
+        grid-template-columns:
+            minmax(0, 1fr) minmax(0, 1fr);
+
+        gap: 45px;
     }
 
-    .about-image {
-        height: 400px;
+    /* Main image */
+
+    .about-main-image {
+        height: 430px;
     }
+
+    /* Gallery */
+
+    .about-gallery {
+        gap: 10px;
+    }
+
+    .about-gallery-item {
+        height: 105px;
+    }
+
+    /* Content */
+
+    .about-content h2 {
+        font-size: 40px;
+        letter-spacing: -1.4px;
+    }
+
+    .about-text p {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .about {
+        padding: 70px 20px 80px;
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+
+    /* =========================
+       MEDIA
+    ========================= */
+
+    .about-media {
+        width: 100%;
+    }
+
+
+    /* =========================
+       MAIN IMAGE
+    ========================= */
+
+    .about-main-image {
+        width: 100%;
+        height: 300px;
+    }
+
+    .about-main-image img {
+        object-position: center;
+    }
+
+
+    /* =========================
+       CAPTION
+    ========================= */
+
+    .about-image-caption {
+        left: 20px;
+        bottom: 19px;
+
+        gap: 10px;
+    }
+
+    .about-image-caption p {
+        font-size: 10px;
+        letter-spacing: 1.7px;
+    }
+
+    .about-image-caption span {
+        width: 23px;
+    }
+
+
+    /* =========================
+       MOBILE PHOTO GALLERY
+    ========================= */
+
+    .about-gallery {
+        display: flex;
+
+        width: 100%;
+
+        gap: 10px;
+
+        margin-top: 10px;
+
+        overflow-x: auto;
+
+        padding-bottom: 3px;
+
+        scroll-snap-type: x mandatory;
+    }
+
+    .about-gallery-item {
+        flex: 0 0 72%;
+
+        width: 72%;
+        height: 150px;
+
+        scroll-snap-align: start;
+    }
+
+    .about-gallery-item img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+    /*
+       Sur téléphone, on désactive le hover
+       car il n'a pas vraiment de sens au tactile.
+    */
+
+    .about-gallery-item:hover img {
+        transform: none;
+        opacity: 1;
+    }
+
+
+    /* =========================
+       CONTENT
+    ========================= */
 
     .about-content {
         max-width: none;
+
+        padding-top: 40px;
+    }
+
+    .about-eyebrow {
+        margin-bottom: 14px;
+
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .about-content h2 {
+        font-size: clamp(32px, 8.8vw, 40px);
+
+        line-height: 1.08;
+
+        letter-spacing: -1px;
+    }
+
+
+    /* =========================
+       TEXT
+    ========================= */
+
+    .about-text {
+        margin-top: 26px;
+
+        max-width: none;
+    }
+
+    .about-text p {
+        margin-bottom: 17px;
+
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       LIST
+    ========================= */
+
+    .about-list {
+        margin-top: 32px;
+    }
+
+    .about-item {
+        min-height: 70px;
+
+        gap: 16px;
+    }
+
+    .about-number {
+        font-size: 11px;
+    }
+
+    .about-item-content h3 {
+        font-size: 14px;
+    }
+
+    .about-item-content p {
+        font-size: 12px;
     }
 }
 
-.about-image {
-    width: 100%;
-    height: 560px;
-    overflow: hidden;
-}
 
-.about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 400px) {
+
+    .about {
+        padding: 60px 16px 70px;
+    }
+
+
+    /* Main photo */
+
+    .about-main-image {
+        height: 270px;
+    }
+
+
+    /* Gallery */
+
+    .about-gallery {
+        gap: 8px;
+    }
+
+    .about-gallery-item {
+        flex-basis: 78%;
+
+        width: 78%;
+        height: 135px;
+    }
+
+
+    /* Caption */
+
+    .about-image-caption {
+        left: 16px;
+        bottom: 16px;
+    }
+
+    .about-image-caption p {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .about-image-caption span {
+        width: 20px;
+    }
+
+
+    /* Content */
+
+    .about-content {
+        padding-top: 32px;
+    }
+
+    .about-content h2 {
+        font-size: 30px;
+    }
+
+
+    /* Text */
+
+    .about-text {
+        margin-top: 23px;
+    }
+
+    .about-text p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+
+    /* List */
+
+    .about-list {
+        margin-top: 28px;
+    }
+
+    .about-item {
+        min-height: 66px;
+
+        gap: 13px;
+    }
+
+    .about-item-content h3 {
+        font-size: 13px;
+    }
+
+    .about-item-content p {
+        font-size: 11px;
+    }
 }

@@ -1,1 +1,19 @@
-/* App styles will go here */
+/* =========================================
+   APP LAYOUT
+========================================= */
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    overflow-x: hidden;
+}

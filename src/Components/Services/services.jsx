@@ -13,7 +13,7 @@ const services = [
     icon: "🛢️",
     title: "Entretien général",
     description:
-      "Vidange, remplacement des filtres, bougies, fluides et entretien périodique selon les recommandations du fabricant.",
+      "Vidange, filtres, bougies, fluides et entretien périodique selon les recommandations du fabricant.",
   },
   {
     number: "03",
@@ -27,21 +27,21 @@ const services = [
     icon: "🛑",
     title: "Freins, suspension & direction",
     description:
-      "Entretien et réparation des freins, ABS, amortisseurs, suspension, roulements et système de direction.",
+      "Freins, ABS, amortisseurs, suspension, roulements et composants du système de direction.",
   },
   {
     number: "05",
-    icon: "🔌",
-    title: "Transmission & électronique",
+    icon: "⚙️",
+    title: "Transmission & groupe motopropulseur",
     description:
-      "Transmission, embrayage, cardans, différentiel, batterie, alternateur, démarreur et diagnostic électronique.",
+      "Transmission, embrayage, cardans, différentiel, système 4x4 / AWD et composants du groupe motopropulseur.",
   },
   {
     number: "06",
-    icon: "🚗",
-    title: "Pneus, échappement & sécurité",
+    icon: "🔌",
+    title: "Électricité & électronique",
     description:
-      "Pneus et roues, échappement, émissions et diagnostic des systèmes électroniques de sécurité.",
+      "Diagnostic électrique et électronique, batterie, alternateur, démarreur, câblage, capteurs et systèmes informatisés.",
   },
 ];
 
@@ -50,6 +50,7 @@ function Services() {
     <section className="services" id="services">
       <div className="services-container">
 
+        {/* HEADER */}
         <div className="services-header">
           <p className="section-tag">NOS SERVICES</p>
 
@@ -65,33 +66,63 @@ function Services() {
           </p>
         </div>
 
-        <div className="services-grid">
+        {/* SERVICES */}
+        <div
+          className="services-grid"
+          role="region"
+          aria-label="Nos services automobiles"
+        >
           {services.map((service) => (
-            <article className="service-card" key={service.number}>
-
+            <article
+              className="service-card"
+              key={service.number}
+            >
               <div className="service-top">
-                <span className="service-icon">{service.icon}</span>
-                <span className="service-number">{service.number}</span>
+                <span
+                  className="service-icon"
+                  aria-hidden="true"
+                >
+                  {service.icon}
+                </span>
+
+                <span className="service-number">
+                  {service.number}
+                </span>
               </div>
 
               <h3>{service.title}</h3>
 
               <p>{service.description}</p>
 
-              <a href="#contact" className="service-link">
-                En savoir plus →
+              <a
+                href="#contact"
+                className="service-link"
+              >
+                En savoir plus <span aria-hidden="true">→</span>
               </a>
-
             </article>
           ))}
         </div>
 
+        {/* MOBILE CAROUSEL HINT */}
+        <p className="services-swipe-hint">
+          <span aria-hidden="true">←</span>
+          Faites glisser pour découvrir nos services
+          <span aria-hidden="true">→</span>
+        </p>
+
+        {/* CTA */}
         <div className="services-bottom">
-          <a href="#contact" className="services-button">
+          <a
+            href="#contact"
+            className="services-button"
+          >
             Voir tous nos services
+            <span aria-hidden="true">→</span>
           </a>
         </div>
 
+        {/* NOTICE */}
         <div className="services-notice">
           <strong>À noter :</strong> le service d'alignement et la
           climatisation automobile ne sont pas offerts.

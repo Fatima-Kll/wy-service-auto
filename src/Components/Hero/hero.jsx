@@ -1,13 +1,21 @@
 import "./hero.css";
-import heroImage from "../../assets/images/2.png";
+import heroImage from "../../assets/images/1.png";
 
 function Hero() {
   return (
-    <section className="hero" id="home">
+    <section
+      className="hero"
+      id="home"
+      style={{ "--hero-image": `url(${heroImage})` }}
+    >
+      <div className="hero-overlay"></div>
+
       <div className="hero-content">
-        
         <div className="hero-text">
-          <p className="hero-tag">W&Y SERVICE AUTO</p>
+
+          <p className="hero-tag">
+            W&Y SERVICE AUTO
+          </p>
 
           <h1>
             Votre véhicule entre
@@ -15,25 +23,26 @@ function Hero() {
           </h1>
 
           <p className="hero-description">
-           Un service automobile professionnel, fiable et adapté à vos besoins.
+            Un service automobile professionnel, fiable et adapté à vos besoins.
           </p>
 
           <div className="hero-buttons">
-            <a href="#quote" className="btn-primary">
+            <a
+              href="#quote"
+              className="btn-primary"
+            >
               Demander un devis
             </a>
 
-            <a href="#appointment" className="btn-secondary">
+            <a
+              href="#appointment"
+              className="btn-secondary"
+            >
               Prendre rendez-vous
             </a>
           </div>
 
         </div>
-
-        <div className="hero-image">
-          <img src={heroImage} alt="W&Y Service Auto" />
-        </div>
-
       </div>
     </section>
   );
