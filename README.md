@@ -2,7 +2,7 @@
 
 > A modern, responsive business website developed for W&Y Service Auto, an automotive service business.
 
-**🌐 Live Website:** [wy-auto.ca](https://wy-auto.ca/)
+**🌐 Live Website:** [wy-auto.ca] (https://wy-auto.ca/)
 
 ---
 
