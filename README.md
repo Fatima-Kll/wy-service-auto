@@ -133,7 +133,7 @@ The website was designed to provide a consistent experience across:
 
 ### Mobile
 
-![Mobile Preview](./public/mobile-preview.png)
+![Mobile Preview](./public/mobile-preview.jpg)
 
 ---
 
