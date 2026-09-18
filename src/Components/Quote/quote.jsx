@@ -34,7 +34,7 @@ function Quote() {
 
     try {
       await fetch(
-        "https://formsubmit.co/ajax/kelfatima22@gmail.com",
+        "https://formsubmit.co/ajax/info@wy-auto.ca",
         {
           method: "POST",
           body: formData,

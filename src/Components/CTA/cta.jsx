@@ -9,7 +9,7 @@ function CTA() {
 
       <div className="cta-content">
 
-        <p className="cta-tag">W&Y SERVICE AUTO</p>
+        <p className="cta-tag">WY SERVICE AUTO</p>
 
         <h2>
           Votre véhicule mérite

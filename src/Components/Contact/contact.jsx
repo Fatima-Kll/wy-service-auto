@@ -23,7 +23,7 @@ function Contact() {
 
   try {
     await fetch(
-      "https://formsubmit.co/ajax/kelfatima22@gmail.com",
+      "https://formsubmit.co/ajax/info@wy-auto.ca",
       {
         method: "POST",
         body: formData,
@@ -114,8 +114,8 @@ function Contact() {
               <div>
                 <h3>Email</h3>
 
-                <a href="mailto:info@whc.ca">
-                         info@whc.ca
+                <a href="mailto:info@wy-auto.ca">
+                         info@wy-auto.ca
                 </a>
               </div>
             </div>

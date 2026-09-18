@@ -8,7 +8,7 @@ function Footer() {
         {/* BRAND */}
         <div className="footer-brand">
           <h2>
-            W&Y <span>SERVICE AUTO</span>
+            WY <span>SERVICE AUTO</span>
           </h2>
 
           <p>
@@ -54,8 +54,8 @@ function Footer() {
 
           <p>
             ✉️{" "}
-            <a href="mailto:info@whc.ca">
-              info@whc.ca
+            <a href="mailto:info@wy-auto.ca">
+              info@wy-auto.ca
             </a>
           </p>
         </div>
@@ -116,7 +116,7 @@ function Footer() {
 <div className="footer-bottom">
 
   <p>
-    © {new Date().getFullYear()} W&Y Service Auto.
+    © {new Date().getFullYear()} WY Service Auto.
     Tous droits réservés.
   </p>
 

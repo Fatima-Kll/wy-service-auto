@@ -14,7 +14,7 @@ function Hero() {
         <div className="hero-text">
 
           <p className="hero-tag">
-            W&Y SERVICE AUTO
+            WY SERVICE AUTO
           </p>
 
           <h1>

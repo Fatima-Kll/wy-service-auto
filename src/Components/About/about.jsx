@@ -24,7 +24,7 @@ function About() {
 
             <div className="about-image-caption">
               <span></span>
-              <p>W&Y SERVICE AUTO</p>
+              <p>WY SERVICE AUTO</p>
             </div>
           </div>
 
@@ -74,7 +74,7 @@ function About() {
 
           <div className="about-text">
             <p>
-              W&Y Service Auto propose des services complets de
+              WY Service Auto propose des services complets de
               mécanique automobile pour voitures, VUS, camions
               légers et véhicules utilitaires.
             </p>
